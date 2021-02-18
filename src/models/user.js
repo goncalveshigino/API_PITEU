@@ -1,8 +1,8 @@
 'use strict';
 
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const SECRET = 'DSFGSD453435sdgfhdfg%&¨*#¨$%#sdgfsd';
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const SECRET = 'jdjdhdjdskdachbdsgsuyckjhnhvgbshi';
 
 const {
     Model,
@@ -69,9 +69,9 @@ module.exports = (sequelize, DataTypes) => {
                 //Recuperar usuario
                 let token = jwt.sign({
                     id: user.id
-                }, 'SECRET', {
+                }, SECRET, {
                     expiresIn: '1d'
-                });
+                })
 
                 return {
                     user: user,
