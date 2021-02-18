@@ -3,7 +3,6 @@
  const Op = Sequelize.Op
  const sucessResponse = require('../responses/sucess.response')
  const errorResponse = require('../responses/error.response')
- const invalidResponse = require('../responses/invalid.response')
  const ResoursController = require('./resource.controller')
 
 
