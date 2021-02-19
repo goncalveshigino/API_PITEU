@@ -13,7 +13,6 @@ module.exports = {
                 type: Sequelize.STRING
             },
             image: {
-                allowNull: false,
                 type: Sequelize.STRING
             },
 
@@ -34,7 +33,7 @@ module.exports = {
                 type: Sequelize.STRING
             },
             longDescription: {
-                allowNull: false,
+
                 type: Sequelize.STRING
             },
             sales: {
@@ -42,7 +41,7 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
             combo: {
-                allowNull: false,
+
                 type: Sequelize.STRING
             },
             createdAt: {

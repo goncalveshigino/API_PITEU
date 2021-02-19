@@ -6,8 +6,12 @@ const UsersController = require('../controllers/users.controller')
 
 
 
+
 const verifyAccessToken = require('../middlewares/verifyAcessToken.middlewares')
 const verifyOwner = require('../middlewares/verifyOwner.middlewares')
+const verifyAccessManager = require("../middlewares/verifyAccessManager.middleware");
+
+const upload = require('../middlewares/upload.middleware')
 
 
 const onlyAllowsOwner = [verifyAccessToken, verifyOwner]
@@ -24,10 +28,6 @@ router.post('/', UsersController.bindMethod('store'));
 router.patch('/:id', onlyAllowsOwner, UsersController.bindMethod('update'));
 //DELETE
 router.delete('/:id', onlyAllowsOwner, UsersController.bindMethod('remove'));
-
-
-
-
 
 
 module.exports = router;
