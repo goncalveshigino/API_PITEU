@@ -99,6 +99,10 @@ module.exports = (sequelize, DataTypes) => {
         name: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: {
+
+                msg: "O Nome informado ja existe no sistema"
+            },
             validate: {
                 is: {
                     args: [/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/],
@@ -120,6 +124,10 @@ module.exports = (sequelize, DataTypes) => {
         },
         phone: {
             type: DataTypes.INTEGER,
+            unique: {
+
+                msg: "O Numero de telefone informado ja existe no sistema"
+            },
             validate: {
 
                 isNumeric: {
