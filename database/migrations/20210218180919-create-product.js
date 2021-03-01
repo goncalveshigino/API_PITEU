@@ -16,16 +16,22 @@ module.exports = {
                 type: Sequelize.STRING
             },
 
-            category: {
+            idCategory: {
                 allowNull: false,
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+                /* references: {
+                     model: 'Categories',
+                     key: 'id',
+                 },
+                 onUpdate: 'CASCADE',
+                 onDelete: 'CASCADE',
+                 */
             },
             value: {
                 allowNull: false,
                 type: Sequelize.INTEGER
             },
             nome_url: {
-                allowNull: false,
                 type: Sequelize.STRING
             },
             description: {
@@ -36,10 +42,7 @@ module.exports = {
 
                 type: Sequelize.STRING
             },
-            sales: {
-                allowNull: false,
-                type: Sequelize.INTEGER
-            },
+
             combo: {
 
                 type: Sequelize.STRING

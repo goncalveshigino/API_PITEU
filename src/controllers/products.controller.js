@@ -6,6 +6,7 @@ const Op = Sequelize.Op
 const ResoursController = require('./resource.controller')
 
 
+
 class ProductsController extends ResoursController {
 
     constructor() {

@@ -28,7 +28,7 @@
 
      async update(req, res, next) {
          if (req.file) {
-             req.body.pic = req.protocol + '://' + req.headers.host + '/uploads' + req.file.filename
+             req.body.image = req.protocol + '://' + req.headers.host + '/uploads' + req.file.filename
          }
          return await super.update(req, res, next)
      }

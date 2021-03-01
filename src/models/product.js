@@ -69,12 +69,11 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         image: DataTypes.STRING,
-        category: DataTypes.INTEGER,
+        idCategory: DataTypes.INTEGER,
         value: DataTypes.INTEGER,
         nome_url: DataTypes.STRING,
         description: DataTypes.STRING,
         longDescription: DataTypes.STRING,
-        sales: DataTypes.INTEGER,
         combo: DataTypes.STRING
     }, {
         sequelize,
