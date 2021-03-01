@@ -1,9 +1,10 @@
-const User = require('../models').User
+const User = require("../../models").User
 
-const errorResponse = require('../responses/error.response')
+const errorResponse = require("../../responses/error.response")
 
 
 module.exports = async(req, res, next) => {
+
 
     try {
 
@@ -12,18 +13,23 @@ module.exports = async(req, res, next) => {
         }
 
         req.body.token = await User.verifyToken(req.headers['x-access-token']);
-        req.body.userId = parseInt(req.body.token.id)
+        req.body.user = parseInt(req.body.token.id);
+        const body = req.body.user;
         req.body.user = await User.getId(req.body.userId)
-
+        const Level = body.dataValues.level
 
         if (!req.body.user) {
-            return errorResponse(res, 400, 'Usuario não encontrado')
+            return errorResponse(res, 404, 'Usuario não encontrado')
         }
 
-        next()
-    } catch (error) {
-        console.log(error)
-        return errorResponse(res, 500, 'impossivel validar token de accesso!', error)
+        if (Level != 1) {
 
+            console.log()
+            return errorResponse(res, 401, 'Apenas o gerente do  tem acesso')
+        }
+        next()
+
+    } catch (error) {
+        return errorResponse(res, 500, 'impossivel validar token de accesso!', error)
     }
 }

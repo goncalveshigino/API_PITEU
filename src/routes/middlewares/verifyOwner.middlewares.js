@@ -1,4 +1,6 @@
-const errorResponse = require('../responses/error.response');
+const User = require('../../models').User
+
+const errorResponse = require('../../responses/error.response');
 
 module.exports = async(req, res, next) => {
 

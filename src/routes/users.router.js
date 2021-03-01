@@ -7,11 +7,11 @@ const UsersController = require('../controllers/users.controller')
 
 
 
-const verifyAccessToken = require('../middlewares/verifyAcessToken.middlewares')
-const verifyOwner = require('../middlewares/verifyOwner.middlewares')
-const verifyAccessManager = require("../middlewares/verifyAccessManager.middleware");
+const verifyAccessToken = require('../routes/middlewares/verifyAcessToken.middlewares')
+const verifyOwner = require('../routes/middlewares/verifyOwner.middlewares')
+const verifyAccessManager = require("../routes/middlewares/verifyAccessManager.middleware");
 
-const upload = require('../middlewares/upload.middleware')
+const upload = require('../routes/middlewares/upload.middleware')
 
 
 const onlyAllowsOwner = [verifyAccessToken, verifyOwner]
